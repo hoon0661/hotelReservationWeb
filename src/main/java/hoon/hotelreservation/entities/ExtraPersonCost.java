@@ -23,4 +23,51 @@ public class ExtraPersonCost {
     
     @Column
     private int cost;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getCost() {
+        return cost;
+    }
+
+    public void setCost(int cost) {
+        this.cost = cost;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 53 * hash + this.id;
+        hash = 53 * hash + this.cost;
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final ExtraPersonCost other = (ExtraPersonCost) obj;
+        if (this.id != other.id) {
+            return false;
+        }
+        if (this.cost != other.cost) {
+            return false;
+        }
+        return true;
+    }
+    
+    
 }
